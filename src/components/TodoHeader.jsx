@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import todoSlice from "../redux/todoSlice";
 const modeIcons = [
   {
@@ -43,15 +43,19 @@ const modeIcons = [
 
 const TodoHeader = () => {
   const dispatch = useDispatch();
+  const mode = useSelector((mode) => mode.mode);
   const handleClick = () => {
     dispatch(todoSlice.actions.mode());
   };
+
   return (
     <header className="flex justify-between items-center w-full mb-10">
       <span className="text-[40px] font-bold text-black dark:text-white">
         TODO
       </span>
-      <button onClick={handleClick}>{modeIcons[0].mode}</button>
+      <button onClick={handleClick}>
+        {mode ? modeIcons[1].mode : modeIcons[0].mode}
+      </button>
     </header>
   );
 };
