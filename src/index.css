@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (hover: hover) {
+  .visibled {
+    display: none;
+    cursor: pointer;
+  }
+  .todo-item:hover .visibled {
+    display: block;
+  }
+}
