@@ -48,7 +48,9 @@ const TodoHeader = () => {
   };
   return (
     <header className="flex justify-between items-center w-full mb-10">
-      <span className="text-[40px] font-bold text-white">TODO</span>
+      <span className="text-[40px] font-bold text-black dark:text-white">
+        TODO
+      </span>
       <button onClick={handleClick}>{modeIcons[0].mode}</button>
     </header>
   );
